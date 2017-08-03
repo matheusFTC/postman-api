@@ -21,11 +21,11 @@ app.post("/", function (req, res) {
         text: req.body.text
     };
 
-    mail(options, function (error, response) {
+    mail(options, function (error) {
         if (error) {
             res.status(500).json(error);
         } else {
-            res.status(200).json(response);
+            res.status(200).end();
         }
     });
 });
