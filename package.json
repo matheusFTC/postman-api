@@ -1,0 +1,32 @@
+{
+  "name": "postman-api",
+  "version": "1.0.0",
+  "description": "Email sending API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "test": "jasmine-node specs/ --junitreport --output tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheusFTC/postman-api.git"
+  },
+  "keywords": [
+    "email",
+    "send-email",
+    "send",
+    "api"
+  ],
+  "author": "Matheus Filipe T. Chaves <matheus.02468@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matheusFTC/postman-api/issues"
+  },
+  "homepage": "https://github.com/matheusFTC/postman-api#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "sendmail": "^1.1.1"
+  }
+}
