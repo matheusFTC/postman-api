@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 app.disable("x-powered-by");
 
-app.post("/", function (req, res) {
+app.post("/", (req, res) => {
     let options = {
         from: req.body.from,
         to: req.body.to,
@@ -44,11 +44,11 @@ app.post("/", function (req, res) {
             });
         }
 
-        transporter.sendMail(options, (error) => {
+        transporter.sendMail(options, (error, info) => {
             if (error) {
-                res.status(500).json(error);
+                res.status(400).json(error);
             } else {
-                res.status(200).end();
+                res.status(200).json(info);
             }
         });
     } else {
@@ -56,22 +56,20 @@ app.post("/", function (req, res) {
 
         mail(options, (error) => {
             if (error) {
-                res.status(500).json(error);
+                res.status(400).json(error);
             } else {
-                res.status(200).end();
+                res.status(200).json({ message: "Email successfully sent." });
             }
         });
     }
 });
 
-app.use(function (req, res, next) {
+app.use((req, res, next) => {
     res.status(404).json({ error: "Resource not found." });
 });
 
-app.use(function (err, req, res, next) {
+app.use((err, req, res, next) => {
     res.status(500).json({ error: "Internal server error." });
 });
 
-app.set("port", process.env.PORT || 80);
-
-app.listen(app.get("port"));
+app.listen(process.env.PORT || 80);
