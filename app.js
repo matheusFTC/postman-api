@@ -21,16 +21,28 @@ app.post("/", function (req, res) {
         html: req.body.html
     };
 
-    if (req.body.host && req.body.port && req.body.user && req.body.pass) {
-        let transporter = nodemailer.createTransport({
-            host: req.body.host,
-            port: req.body.port,
-            secure: true,
-            auth: {
-                user: req.body.user,
-                pass: req.body.pass
-            }
-        });
+    if (((req.body.host && req.body.port) || req.body.service) && req.body.user && req.body.pass) {
+        let transporter;
+
+        if (req.body.service) {
+            transporter = nodemailer.createTransport({
+                service: req.body.service,
+                auth: {
+                    user: req.body.user,
+                    pass: req.body.pass
+                }
+            });
+        } else {
+            transporter = nodemailer.createTransport({
+                host: req.body.host,
+                port: req.body.port,
+                secure: true,
+                auth: {
+                    user: req.body.user,
+                    pass: req.body.pass
+                }
+            });
+        }
 
         transporter.sendMail(options, (error) => {
             if (error) {
