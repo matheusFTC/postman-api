@@ -9,8 +9,8 @@ Este projeto destina-se a fornecer um serviço web simples de envio de e-mail.
 ### Pré-requisitos
 O que você precisa para instalar e rodar o projeto:
 
-Git (^2.8.1) - https://git-scm.com/
-Node.js (^6.9.4) e NPM (^3.10.10) - https://nodejs.org/
+1. Git (^2.8.1) - https://git-scm.com/
+2. Node.js (^6.9.4) e NPM (^3.10.10) - https://nodejs.org/
 
 ### Instalando
 Um passo a passo...
