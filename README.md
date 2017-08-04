@@ -31,7 +31,7 @@ Um passo a passo...
 }
 
 ### API no Heroku
-Para facilitar, a API foi hospedada no Hiroku.
+Para facilitar, a API foi hospedada no Heroku.
 
 Você também pode testar e usar esta API por meio da URL: https://postman-api.herokuapp.com.
 
