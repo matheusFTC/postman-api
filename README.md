@@ -27,7 +27,8 @@ Um passo a passo...
     "from": "...",
     "to": "...",
     "subject": "...",
-    "text": "..."
+    "text": "...",
+    "html": "..."
 }
 
 ### API no Heroku
