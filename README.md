@@ -1,5 +1,5 @@
 # postman-api
-API de envio de e-mail.
+API de envio de e-mail
 
 ## Resumo
 Este projeto destina-se a fornecer um serviço web simples de envio de e-mail.
